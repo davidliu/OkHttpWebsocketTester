@@ -66,9 +66,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
+    override fun onStop() {
         currentWs?.cancel()
-        super.onDestroy()
+        currentWs = null
+        super.onStop()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
